@@ -1,9 +1,13 @@
-import { Router } from "express";
+import { Router } from 'express';
+import { ProductController } from '@/api/controllers';
+import { authMiddleware } from '@/api/middlewares/AuthMiddleware';
 
-import { productController } from "@/api/controllers";
+const productRouter = Router();
+const productController = new ProductController();
 
-const userRouter = Router();
+productRouter.get('/', authMiddleware, (req, res) => productController.getProducts(req, res));
+productRouter.post('/', authMiddleware, (req, res) => productController.createProduct(req, res));
+productRouter.patch('/:id', authMiddleware, (req, res) => productController.updateProduct(req, res));
+productRouter.delete('/:id', authMiddleware, (req, res) => productController.deleteProduct(req, res));
 
-userRouter.get("/", productController.getProducts);
-
-export { userRouter };
+export { productRouter };

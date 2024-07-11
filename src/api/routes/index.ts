@@ -3,8 +3,7 @@
  */
 import { Router, Express } from 'express';
 
-import { userRouter } from './UserRouter';
-
+import { productRouter } from './ProductRouter';
 
 export const globalRouter = (app: Express): void => {
   const router = Router();
@@ -20,5 +19,5 @@ export const globalRouter = (app: Express): void => {
   /**
    * Import Other Routes
    */
-  app.use('/user', userRouter);
+  app.use('/product', productRouter);
 };

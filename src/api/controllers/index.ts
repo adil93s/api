@@ -2,4 +2,4 @@
  * Global Controllers
  * Export Controllers
  */
-export * from "./ProductController";
+export * from './ProductController';

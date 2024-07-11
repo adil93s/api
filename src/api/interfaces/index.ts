@@ -1,4 +1,4 @@
 /**
  * Interfaces
  */
-export * from "@/api/interfaces/ProductInterface";
+export * from '@/api/interfaces/ProductInterface';

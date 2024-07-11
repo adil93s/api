@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import { ProductDocument } from "@/api/interfaces";
+import mongoose from 'mongoose';
+import { ProductDocument } from '@/api/interfaces';
 
 const productSchema = new mongoose.Schema({
   name: {
@@ -28,7 +28,4 @@ const productSchema = new mongoose.Schema({
   },
 });
 
-export const ProductModel = mongoose.model<ProductDocument>(
-  "Product",
-  productSchema
-);
+export const ProductModel = mongoose.model<ProductDocument>('Product', productSchema);
