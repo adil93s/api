@@ -1,4 +1,5 @@
 import { globalRouter } from '@/api/routes';
+import cors from 'cors';
 import '@/config/db';
 import { PORT } from '@/config/env';
 import express from 'express';
@@ -9,6 +10,7 @@ const server = createServer(app);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 /** Global Routing */
 globalRouter(app);
